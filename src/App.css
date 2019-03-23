@@ -1,33 +1,214 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body, root{
+  height: 100vh;
+  width: 100vw;
+}
+
+.flex {
+  display: flex;
+}
+
 .App {
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#container {
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#left-container {
+ width:40%;
+  flex-direction: column;
+  height:100vh;
+}
+
+#right-container {
+  width: 60%;
+  flex-direction: column;
+  height:100vh;
+}
+
+#left-navbar {
+  border-right: 1px solid #DBDBDB;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 0;
+  flex-basis: auto;
+}
+
+.navbar {
+  height: 59px;
+  width: 100%;
+  flex-shrink: 0;
+  background-color: #EEEEEE;
+}
+
+.semi-navbar {
+  height: 49px;
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #F8F8F8;
+}
+
+.left-contacts-container {
+  flex-grow: 1;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.message-box {
+  width: 100%;
+  height: 73px;
+  flex-shrink: 0;
+  flex-direction: row;
+}
+
+.contact-pic-container {
+  width: 77px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-name-container {
+  flex-grow: 1;
+  border-bottom: 1px solid gray;
+}
+
+.profile-pic {
+  width: 45px;
+  height: 45px;
+}
+
+.contact-pic {
+  width: 56px;
+  height: 56px;
+}
+
+#right-message-display-container {
+  background-image: url("https://i.pinimg.com/originals/58/03/08/58030840ebfe85a3b79745edb3be3831.png");
+  flex-grow: 1;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
+}
+
+#message-typer-container {
+  height: 62px;
+  background-color: #EFEFEF;
+  flex-shrink: 0;
+}
+
+.item {
+  position: relative;
+  width: auto;
+  height: 60px;
+  flex-shrink: 0;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+.sent-msg {
+  position: relative;
+  background-color: #DCF7C8;
+  align-self: flex-end;
+  margin-right: 30px;
+}
+
+.received-msg {
+  position: relative;
+  background-color: #FFFFFF;
+  align-self: flex-start;
+  margin-left: 30px;
+}
+
+.item:nth-child(2n+1) .triangle-up {
+  position: absolute;
+  top: 0px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid white;
+}
+
+.item:nth-child(2n) .triangle-up {
+  position: absolute;
+  top: 0px;
+  right: -7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #DCF7C8;
+}
+
+.received-msg > .triangle-up {
+  position: absolute;
+  top: 0px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid red;
+}
+
+#story-icon-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 200px;
+}
+
+#profile-pic-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-pic {
+  padding-left: 50px;
+}
+
+.contact-name-container{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.message-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-list-item:hover {
+  background-color: #F4F5F5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message-box-selected{
+  background-color: #E9EBEB;
 }
